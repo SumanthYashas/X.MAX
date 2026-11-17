@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/fontsource/fonts/inter-tight@latest/latin-300-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/fontsource/fonts/inter-tight@latest/latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/fontsource/fonts/inter-tight@latest/latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/fontsource/fonts/inter-tight@latest/latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Kaushan Script";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/fontsource/fonts/kaushan-script@latest/latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/fontsource/fonts/unbounded@latest/latin-700-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Syncopate";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/fontsource/fonts/syncopate@latest/latin-700-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Michroma";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/fontsource/fonts/michroma@latest/latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Archivo Black";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/fontsource/fonts/archivo-black@latest/latin-400-normal.woff2") format("woff2");
+}
+
+:root {
+  --ink: #111418;
+  --bg: #f4f7fb;
+  --pill-bg: rgba(234, 239, 246, 0.86);
+  --panel-dark: #12151b;
+  --accent-orange: #ff5512;
+  --u: calc(100vw / 1536);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --u: calc(100vw / 390);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-u-scope {
+  --u: min(calc(100vw / 1536), calc(100vh / 864));
+}
+
+@media (max-width: 767px) {
+  .hero-u-scope {
+    --u: calc(100vw / 390);
+  }
+}
+
+/* Header pill transition (snug around logo + nav, no trailing 2-dot menu space) */
+.header-pill-left {
+  width: calc(544 * var(--u));
+  transition: width 0.6s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.header-pill-left.is-compact {
+  width: calc(138 * var(--u));
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header-pill-left {
+    width: 446px;
+  }
+
+  .header-pill-left.is-compact {
+    width: 112px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-pill-left,
+  .header-pill-left.is-compact {
+    width: 108px;
+  }
+}
+
+.header-nav-fade {
+  transition: opacity 0.35s ease;
+}
+
+/* Horizontal mobile tab strip helper */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Marquee edge fade */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 4%, #000 96%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 4%, #000 96%, transparent 100%);
+}
+
+/* Squircle glow inner border on timeline tiles */
+.timeline-tile-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22.4%;
+  pointer-events: none;
+  box-shadow: inset 0 0 24px rgba(255, 255, 255, 0.55);
+}
+
+/* Hero CTA spring hover */
+.hero-cta-btn {
+  transition: transform 0.3s cubic-bezier(0.3, 1.6, 0.5, 1), background-color 0.2s ease;
+}
+
+.hero-cta-btn:hover {
+  transform: scale(1.05);
+  background-color: #2b3140;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .header-pill-left,
+  .header-nav-fade,
+  .hero-cta-btn {
+    transition: none !important;
+  }
+}
+
+/* Wordmark font utility classes for ticker */
+.font-kaushan { font-family: "Kaushan Script", cursive; }
+.font-unbounded { font-family: "Unbounded", sans-serif; }
+.font-syncopate { font-family: "Syncopate", sans-serif; }
+.font-michroma { font-family: "Michroma", sans-serif; }
+.font-archivo { font-family: "Archivo Black", sans-serif; }
+.font-inter-tight { font-family: "Inter Tight", sans-serif; }

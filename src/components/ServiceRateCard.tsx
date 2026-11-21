@@ -47,14 +47,14 @@ export function ServiceRateCard({
       >
         <div className="max-w-2xl">
           <p className="text-[13px] font-medium tracking-[0.04em] text-[#111418]/50 mb-3">
-            Service Pricing Catalogue · 2026–27
+            Digital Marketing Rate Card · 2026–27
           </p>
           <h2 className="text-[32px] md:text-[48px] font-medium tracking-[-0.025em] leading-[1.06] text-[#111418] [text-wrap:balance]">
-            01. Individual Service Rate Card
+            01. Individual Marketing &amp; Ad Deliverables
           </h2>
           <p className="mt-3 text-[16px] md:text-[18px] leading-[1.55] text-[#111418]/70">
-            Standard starting rates. Clients may select any combination of services to assemble a
-            tailored project scope.
+            Transparent starting rates for paid social creatives, reels video ads, SEO, and
+            conversion funnels. Pick any combination to assemble a custom growth scope.
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export function ServiceRateCard({
                 className="absolute inset-0 bg-white rounded-[10px] shadow-sm"
               />
             )}
-            <span className="relative z-10">All Disciplines</span>
+            <span className="relative z-10">All Channels</span>
           </button>
           {SERVICE_CATEGORIES.map((cat) => (
             <button
@@ -137,8 +137,8 @@ export function ServiceRateCard({
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search services..."
-            aria-label="Search individual services"
+            placeholder="Search marketing services..."
+            aria-label="Search digital marketing services"
             className="w-full h-[42px] pl-10 pr-9 rounded-[12px] bg-white border border-[#111418]/12 text-[14px] text-[#111418] placeholder:text-[#111418]/40 focus:outline-none focus:border-[#111418]/40 transition-colors"
           />
           {query && (
@@ -293,7 +293,7 @@ export function ServiceRateCard({
       {/* Cross-Page Footer Bar */}
       <div className="mt-14 pt-8 border-t border-[#111418]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <p className="text-[15px] text-[#111418]/65">
-          Looking for an all-in-one project scope? Explore our optional one-time bundles.
+          Looking for a turnkey campaign rollout? Explore our optional digital marketing bundles.
         </p>
         <div className="flex flex-wrap items-center gap-3">
           <button

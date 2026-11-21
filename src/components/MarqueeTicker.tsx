@@ -6,14 +6,14 @@ interface TickerWordmark {
 }
 
 const TICKER_ITEMS: TickerWordmark[] = [
-  { label: 'BRANDING', className: 'font-archivo uppercase tracking-[-0.01em]' },
-  { label: 'MOTION', className: 'font-unbounded font-bold tracking-[0.02em]' },
-  { label: 'META ADS', className: 'font-syncopate font-bold text-[19px] md:text-[20px] lg:text-[calc(26*var(--u))] tracking-[0.04em]' },
-  { label: 'WEB DEV', className: 'font-michroma text-[19px] md:text-[19px] lg:text-[calc(25*var(--u))] tracking-[0.06em]' },
-  { label: 'GOOGLE ADS', className: 'font-inter-tight font-light text-[19px] md:text-[21px] lg:text-[calc(28*var(--u))] tracking-[0.36em]' },
-  { label: 'Identity', className: 'font-inter-tight font-semibold tracking-[-0.03em]' },
-  { label: 'SEO AUDIT', className: 'font-unbounded font-bold tracking-[0.02em]' },
-  { label: 'REELS', className: 'font-archivo uppercase' },
+  { label: 'META ADS', className: 'font-archivo uppercase tracking-[-0.01em]' },
+  { label: 'GOOGLE ADS', className: 'font-unbounded font-bold tracking-[0.02em]' },
+  { label: 'REELS ADS', className: 'font-syncopate font-bold text-[19px] md:text-[20px] lg:text-[calc(26*var(--u))] tracking-[0.04em]' },
+  { label: 'SEO AUDIT', className: 'font-michroma text-[19px] md:text-[19px] lg:text-[calc(25*var(--u))] tracking-[0.06em]' },
+  { label: 'FUNNELS', className: 'font-inter-tight font-light text-[19px] md:text-[21px] lg:text-[calc(28*var(--u))] tracking-[0.36em]' },
+  { label: 'Growth', className: 'font-inter-tight font-semibold tracking-[-0.03em]' },
+  { label: 'CRO & UX', className: 'font-unbounded font-bold tracking-[0.02em]' },
+  { label: 'ROAS SCALE', className: 'font-archivo uppercase' },
 ];
 
 export function MarqueeTicker() {
@@ -107,11 +107,11 @@ export function MarqueeTicker() {
   return (
     <section
       ref={sectionRef}
-      aria-label="X.MAX core agency disciplines"
+      aria-label="X.MAX core digital marketing disciplines"
       className="pt-[44px] pb-[16px] md:pt-[56px] md:pb-[24px] lg:pt-[calc(72*var(--u))] lg:pb-[calc(40*var(--u))]"
     >
       <p className="text-center px-[20px] text-[13.5px] md:text-[16px] lg:text-[calc(20.66*var(--u))] tracking-[0.033em] text-[rgba(15,20,30,0.42)]">
-        Digital Marketing • Creative • Branding • Web Development
+        Paid Acquisition • Performance Creatives • Reels Ads • SEO &amp; Funnels
       </p>
 
       <div className="marquee-mask w-full overflow-hidden mt-[28px] md:mt-[36px] lg:mt-[calc(52*var(--u))]">

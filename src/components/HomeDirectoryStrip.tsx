@@ -17,33 +17,33 @@ const DIRECTORY_CARDS: Array<{
   {
     index: '01',
     route: 'pricing',
-    title: 'Individual Service Rate Card',
+    title: 'Digital Marketing Rate Card',
     summary:
-      '40 modular services across Graphic Design, Branding, Video Production, Web Development, and Digital Marketing starting from ₹300.',
+      '40 modular marketing deliverables across Ad Creatives, Reels Video Ads, Meta & Google Campaigns, SEO, and Landing Funnels from ₹300.',
     cta: 'View All Rates',
   },
   {
     index: '02',
     route: 'packages',
-    title: 'Bundled Project Packages',
+    title: 'Growth & Launch Packages',
     summary:
-      'Five structured one-time project scopes from Brand Essentials (₹15,000) to Complete Brand Experience (₹75,000).',
+      'Five structured digital marketing scopes from Social Launch Kit (₹15,000) to Omnichannel Growth Scale (₹75,000).',
     cta: 'Explore Packages',
   },
   {
     index: '03',
     route: 'terms',
-    title: 'Additional Charges & Terms',
+    title: 'Campaign Terms & Ad Policies',
     summary:
-      'Transparent commercial milestones, revision rounds, urgent delivery rates, and quotation billing policies.',
+      'Transparent milestone billing, A/B revision rounds, rush launch rates, and direct client ad spend policies.',
     cta: 'Read Terms',
   },
   {
     index: '04',
     route: 'quote',
-    title: 'Custom Quotation Builder',
+    title: 'Custom Campaign Scope Builder',
     summary:
-      'Combine individual services or a bundled package to calculate your starting estimate and request a formal scope.',
+      'Combine individual ad creatives, Reels, SEO, or a full-funnel growth package to calculate your campaign estimate.',
     cta: 'Build Quote',
     dark: true,
   },
@@ -52,24 +52,24 @@ const DIRECTORY_CARDS: Array<{
 export function HomeDirectoryStrip({ onNavigate }: HomeDirectoryStripProps) {
   return (
     <section
-      aria-label="Explore X.MAX Catalogue Pages"
+      aria-label="Explore X.MAX Digital Marketing Catalogue"
       className="mx-auto max-w-[1360px] px-[20px] md:px-[60px] pb-[90px] md:pb-[130px]"
     >
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-8 border-b border-[#111418]/10">
         <div>
           <p className="text-[13px] font-medium tracking-[0.04em] text-[#111418]/50 mb-2">
-            Service Pricing Catalogue · 2026–27
+            Digital Marketing Pricing Catalogue · 2026–27
           </p>
           <h2 className="text-[28px] md:text-[40px] font-medium tracking-[-0.02em] leading-[1.08] text-[#111418]">
-            Your Requirements. Our Pricing.
+            Your Funnel Goals. Clear Pricing.
           </h2>
         </div>
         <p className="text-[15px] text-[#111418]/65 max-w-md">
-          Browse modular individual rates or one-time bundled project scopes on dedicated pages.
+          Pick modular performance marketing deliverables or complete omnichannel growth scopes.
         </p>
       </div>
 
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5">
         {DIRECTORY_CARDS.map((card, i) => (
           <motion.button
             key={card.route}

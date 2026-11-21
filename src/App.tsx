@@ -13,6 +13,13 @@ import { BundledPackages } from './components/BundledPackages';
 import { TermsAndCharges } from './components/TermsAndCharges';
 import { QuoteBuilder } from './components/QuoteBuilder';
 import { Footer } from './components/Footer';
+import { AnalyticsDashboard } from './components/AnalyticsDashboard';
+import { WorkflowAppDemos } from './components/WorkflowAppDemos';
+import {
+  sendWatchHeartbeat,
+  trackClick,
+  trackPageView,
+} from './lib/analytics';
 import {
   PageRoute,
   ROUTE_PATHS,
@@ -33,6 +40,68 @@ export default function App() {
 
   useEffect(() => {
     document.title = ROUTE_TITLES[currentRoute];
+    trackPageView(ROUTE_PATHS[currentRoute], ROUTE_TITLES[currentRoute]);
+  }, [currentRoute]);
+
+  // Real foreground watch-time tracker (flushes every 5s and on pagehide/route switch)
+  useEffect(() => {
+    const activeRoutePath = ROUTE_PATHS[currentRoute];
+    let pendingSeconds = 0;
+
+    const tick = window.setInterval(() => {
+      if (document.visibilityState === 'visible') {
+        pendingSeconds += 1;
+        if (pendingSeconds >= 5) {
+          const toSend = pendingSeconds;
+          pendingSeconds = 0;
+          sendWatchHeartbeat(activeRoutePath, toSend);
+        }
+      }
+    }, 1000);
+
+    const flush = (useBeacon: boolean) => {
+      if (pendingSeconds > 0) {
+        const toSend = pendingSeconds;
+        pendingSeconds = 0;
+        sendWatchHeartbeat(activeRoutePath, toSend, useBeacon);
+      }
+    };
+
+    const onVisibility = () => {
+      if (document.visibilityState === 'hidden') flush(true);
+    };
+    const onPageHide = () => flush(true);
+
+    document.addEventListener('visibilitychange', onVisibility);
+    window.addEventListener('pagehide', onPageHide);
+
+    return () => {
+      window.clearInterval(tick);
+      document.removeEventListener('visibilitychange', onVisibility);
+      window.removeEventListener('pagehide', onPageHide);
+      flush(true);
+    };
+  }, [currentRoute]);
+
+  // Global delegated click attribution across buttons, links, tabs & menus
+  useEffect(() => {
+    const onDocClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      const interactive = target?.closest('button, a, [role="tab"], [role="menuitem"]') as HTMLElement | null;
+      if (!interactive) return;
+      const rawLabel =
+        interactive.getAttribute('aria-label') ||
+        interactive.getAttribute('title') ||
+        interactive.textContent ||
+        '';
+      const cleaned = rawLabel.replace(/\s+/g, ' ').trim();
+      if (!cleaned) return;
+      const elemType = interactive.tagName.toLowerCase() === 'a' ? 'link' : interactive.getAttribute('role') || 'button';
+      trackClick(cleaned, elemType, ROUTE_PATHS[currentRoute]);
+    };
+
+    document.addEventListener('click', onDocClick, true);
+    return () => document.removeEventListener('click', onDocClick, true);
   }, [currentRoute]);
 
   useEffect(() => {
@@ -208,6 +277,30 @@ export default function App() {
                   onClearAll={handleClearAll}
                   onNavigate={navigateTo}
                 />
+              </motion.div>
+            )}
+
+            {currentRoute === 'analytics' && (
+              <motion.div
+                key="page-analytics"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <AnalyticsDashboard onNavigate={navigateTo} />
+              </motion.div>
+            )}
+
+            {currentRoute === 'demos' && (
+              <motion.div
+                key="page-demos"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <WorkflowAppDemos onNavigate={navigateTo} />
               </motion.div>
             )}
           </AnimatePresence>

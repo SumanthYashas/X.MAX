@@ -11,89 +11,89 @@ const WORKFLOW_STEPS = [
   {
     step: '01',
     phase: 'DISCOVER',
-    title: 'Understand Your Business',
+    title: 'Audit Funnel & Audience',
     detail:
-      'We learn about your business, audience, competitors, goals and project requirements before work begins.',
+      'We analyze your customer persona, current ad accounts, organic channels, conversion leaks, and revenue targets before launching.',
   },
   {
     step: '02',
     phase: 'RESEARCH',
-    title: 'Build Context',
+    title: 'Competitor Ad Intelligence',
     detail:
-      'We review relevant market trends, audience needs, competitor activity and category conventions to inform the direction.',
+      'We inspect active competitor Meta/Google ad libraries, high-intent search keywords, and top-performing social hooks in your category.',
   },
   {
     step: '03',
     phase: 'STRATEGIZE',
-    title: 'Plan With Purpose',
+    title: 'Build The Growth Roadmap',
     detail:
-      'We develop a tailored creative or digital plan, define deliverables and agree on priorities, timelines and success measures.',
+      'We map channel allocation, creative testing matrices, SEO priorities, KPIs (ROAS/CPA/CPL), and launch timelines.',
   },
   {
     step: '04',
-    phase: 'CREATE',
-    title: 'Combine Creativity & Technology',
+    phase: 'PRODUCE',
+    title: 'Craft High-Converting Assets',
     detail:
-      'We develop the agreed work using professional creative software, modern production techniques and AI-assisted tools where useful.',
+      'We produce thumb-stopping static ads, UGC & kinetic Reels ads, SEO content, and fast mobile conversion landing pages.',
   },
   {
     step: '05',
     phase: 'OPTIMIZE',
-    title: 'Review & Refine',
+    title: 'Split-Test & Lower CPA',
     detail:
-      'We quality-check the work, incorporate agreed feedback and use available performance insights to identify practical improvements.',
+      'We launch structured A/B hook tests, track events via Meta CAPI & GA4, prune wasted spend, and scale winning ad sets.',
   },
   {
     step: '06',
-    phase: 'DELIVER',
-    title: 'Finish With Precision',
+    phase: 'SCALE',
+    title: 'Report & Expand Reach',
     detail:
-      'We deliver approved files and assets in the agreed formats, along with handover notes included in the project scope.',
+      'We deliver transparent attribution reports, editable campaign files, and next-sprint scaling actions for compounded growth.',
   },
 ];
 
 const TECH_TOOLS = [
   {
-    code: 'Ps',
-    tool: 'Adobe Photoshop',
-    usage: 'Image editing, compositing, retouching and creative production.',
-    bg: '#001E36',
-    fg: '#31A8FF',
+    code: 'Ma',
+    tool: 'Meta Ads & CAPI',
+    usage: 'Full-funnel Instagram & Facebook campaigns, Advantage+ shopping, and server-side conversion tracking.',
+    bg: '#0866FF',
+    fg: '#FFFFFF',
   },
   {
-    code: 'Ai',
-    tool: 'Adobe Illustrator',
-    usage: 'Vector artwork, logo development and brand assets.',
-    bg: '#330000',
-    fg: '#FF9A00',
-  },
-  {
-    code: 'Pr',
-    tool: 'Adobe Premiere Pro',
-    usage: 'Video editing, storytelling and social-first content.',
-    bg: '#00005B',
-    fg: '#9999FF',
+    code: 'Ga',
+    tool: 'Google Ads & GA4',
+    usage: 'High-intent Search, Shopping, YouTube performance campaigns, and revenue attribution.',
+    bg: '#1A73E8',
+    fg: '#FFFFFF',
   },
   {
     code: 'Ae',
     tool: 'Adobe After Effects',
-    usage: 'Motion graphics, animation and visual effects.',
+    usage: 'Kinetic 9:16 Reels ads, 3-second scroll hooks, and dynamic product motion commercials.',
     bg: '#00005B',
     fg: '#9999FF',
   },
   {
-    code: 'Lr',
-    tool: 'Adobe Lightroom',
-    usage: 'Photo enhancement, colour correction and image consistency.',
+    code: 'Ps',
+    tool: 'Adobe Photoshop',
+    usage: 'Direct-response static ad creatives, multi-slide carousels, and retargeting banners.',
     bg: '#001E36',
     fg: '#31A8FF',
   },
   {
-    code: 'Id',
-    tool: 'Adobe InDesign',
-    usage: 'Brochures, layouts, documents and multi-page publications.',
-    bg: '#49021F',
-    fg: '#FF3366',
+    code: 'Pr',
+    tool: 'Adobe Premiere Pro',
+    usage: 'UGC video ad cuts, caption pacing, and multi-hook short-form social reels.',
+    bg: '#00005B',
+    fg: '#9999FF',
+  },
+  {
+    code: 'Se',
+    tool: 'Technical SEO & CRO',
+    usage: 'Schema markup, buyer-intent keyword architecture, and high-speed ad landing pages.',
+    bg: '#0F172A',
+    fg: '#34D399',
   },
 ] as const;
 
@@ -144,81 +144,50 @@ function SoftwareTileIcon({
   );
 }
 
-const AI_WORKFLOWS = [
-  {
-    area: 'Creative exploration',
-    usage: 'Explore early concepts, visual directions and campaign ideas.',
-  },
-  {
-    area: 'Research support',
-    usage: 'Organize research, explore trends and assist competitor and audience analysis.',
-  },
-  {
-    area: 'Content development',
-    usage: 'Support brainstorming, outlines, copy variations and messaging refinement.',
-  },
-  {
-    area: 'Image workflows',
-    usage: 'Assist with image ideation, enhancement and selected production tasks.',
-  },
-  {
-    area: 'Video workflows',
-    usage: 'Support storyboarding, transcription, subtitles and editing preparation.',
-  },
-  {
-    area: 'Marketing analysis',
-    usage: 'Help interpret available campaign data and identify areas to investigate.',
-  },
-  {
-    area: 'Workflow efficiency',
-    usage: 'Reduce repetitive tasks and help organize production processes.',
-  },
-];
-
 const WHY_XMAX = [
   {
-    title: 'AI-Enhanced Workflows',
+    title: 'Performance-First Creative',
     detail:
-      'We use modern AI tools selectively to support research, ideation and production efficiency.',
+      'Every ad visual and video reel is engineered for thumb-stop rate, click-through rate, and lower acquisition cost.',
   },
   {
-    title: 'Human-Led Creativity',
+    title: 'Full-Funnel Tracking Ready',
     detail:
-      'Creative direction is guided by design expertise, brand understanding and human judgement.',
+      'Clean Meta CAPI, Google Tag, and landing page conversion tracking built into every campaign launch.',
   },
   {
-    title: 'Strategy-Driven Execution',
+    title: 'ROI-Driven Strategy',
     detail:
-      'We connect deliverables to client objectives instead of creating content without a clear purpose.',
+      'We tie creative production directly to pipeline metrics—leads, bookings, ROAS, and organic search capture.',
   },
   {
-    title: 'Efficient Production',
+    title: 'Rapid A/B Creative Testing',
     detail:
-      'Structured workflows help us manage time and maintain consistent quality.',
+      'Structured sprints produce multiple ad hooks and copy angles so campaigns never suffer from ad fatigue.',
   },
   {
-    title: 'Customized Solutions',
+    title: 'Transparent Campaign Pricing',
     detail:
-      "Every project is scoped around the client's requirements, budget and goals.",
+      'Modular rate-card pricing and turnkey marketing bundles without bloated agency retainers.',
   },
 ];
 
 const THREE_PILLARS = [
   {
-    title: 'Creativity',
-    caption: 'Ideas that stand out.',
+    title: 'Paid Acquisition',
+    caption: 'Precision targeting that scales.',
   },
   {
-    title: 'Technology',
-    caption: 'Intelligence that accelerates.',
+    title: 'Ad Creative',
+    caption: 'Hooks that stop the scroll.',
   },
   {
-    title: 'Strategy',
-    caption: 'Execution that matters.',
+    title: 'Conversion & SEO',
+    caption: 'Traffic that actually converts.',
   },
 ];
 
-type CapabilityTab = 'tech' | 'ai' | 'why';
+type CapabilityTab = 'tech' | 'why';
 
 export function HowWeWork({ onNavigate }: HowWeWorkProps) {
   const [activeTab, setActiveTab] = useState<CapabilityTab>('tech');
@@ -240,27 +209,24 @@ export function HowWeWork({ onNavigate }: HowWeWorkProps) {
         >
           <div className="lg:col-span-6">
             <p className="text-[13px] font-medium tracking-[0.04em] text-[#111418]/50 mb-3">
-              How We Work · Our Approach &amp; Technology
+              How We Market · Strategy, Creative &amp; Media Buying
             </p>
             <h2 className="text-[32px] md:text-[46px] font-medium tracking-[-0.025em] leading-[1.06] text-[#111418] [text-wrap:balance]">
-              We don&rsquo;t just create. We innovate, optimize and deliver.
+              We don&rsquo;t just run ads. We build full-funnel growth engines.
             </h2>
           </div>
 
           <div className="lg:col-span-6 space-y-3 text-[15px] md:text-[16px] leading-[1.6] text-[#111418]/75">
             <p>
-              At X.MAX, we combine creative expertise, advanced digital tools and AI-assisted
-              workflows to help brands communicate clearly, work smarter and build stronger digital
-              experiences.
+              At X.MAX, we unite performance ad creative, Meta &amp; Google media buying, technical
+              SEO, and conversion-focused landing funnels to turn attention into qualified leads and sales.
             </p>
             <p>
-              Our work is human-led and technology-enabled. We select the right tools for each
-              brief while keeping strategy, craft and client objectives at the centre of every
-              project.
+              Every asset is built around real buyer psychology—pairing rapid A/B hook testing with
+              clean server-side tracking and transparent campaign attribution.
             </p>
             <p className="text-[#111418] font-medium pt-1">
-              Our promise: thoughtful creative work, purposeful strategy and transparent project
-              delivery.
+              Our promise: scroll-stopping ad creative, disciplined media buying, and measurable ROI.
             </p>
           </div>
         </motion.div>
@@ -355,15 +321,15 @@ export function HowWeWork({ onNavigate }: HowWeWorkProps) {
         </div>
       </div>
 
-      {/* Part C: Interactive Switcher for 02. Technology, 03. AI Innovation, 04. Why X.MAX */}
+      {/* Part C: Interactive Switcher for 02. Technology Stack, 03. Why X.MAX */}
       <div className="mt-16 pt-12 border-t border-[#111418]/10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div className="max-w-xl">
             <p className="text-[13px] font-medium tracking-[0.04em] text-[#111418]/50 mb-2">
-              Creative Stack &amp; Intelligence
+              Growth Stack &amp; Performance Craft
             </p>
             <h3 className="text-[26px] md:text-[34px] font-medium tracking-[-0.02em] leading-[1.1] text-[#111418]">
-              Creative thinking. Advanced technology. Intelligent execution.
+              Conversion creative. Media buying. Measurable scale.
             </h3>
           </div>
 
@@ -374,8 +340,7 @@ export function HowWeWork({ onNavigate }: HowWeWorkProps) {
           >
             {[
               { id: 'tech' as const, label: '02. Technology Stack' },
-              { id: 'ai' as const, label: '03. AI Innovation' },
-              { id: 'why' as const, label: '04. Why X.MAX' },
+              { id: 'why' as const, label: '03. Why X.MAX' },
             ].map((tab) => {
               const active = activeTab === tab.id;
               return (
@@ -447,43 +412,6 @@ export function HowWeWork({ onNavigate }: HowWeWorkProps) {
               </motion.div>
             )}
 
-            {activeTab === 'ai' && (
-              <motion.div
-                key="tab-ai"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-white rounded-[24px] border border-[#111418]/10 overflow-hidden"
-              >
-                <div className="px-6 md:px-8 py-5 border-b border-[#111418]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                  <h4 className="text-[18px] font-medium text-[#111418]">
-                    03. AI-Powered Innovation
-                  </h4>
-                  <p className="text-[13px] text-[#111418]/60">
-                    AI enhances capabilities—never replacing human creativity, judgement, or
-                    accountability.
-                  </p>
-                </div>
-
-                <ul className="divide-y divide-[#111418]/8">
-                  {AI_WORKFLOWS.map((item) => (
-                    <li
-                      key={item.area}
-                      className="grid grid-cols-1 sm:grid-cols-12 gap-2 px-6 md:px-8 py-4 items-baseline"
-                    >
-                      <span className="sm:col-span-4 text-[15px] font-medium text-[#111418]">
-                        {item.area}
-                      </span>
-                      <span className="sm:col-span-8 text-[14px] md:text-[15px] text-[#111418]/70">
-                        {item.usage}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            )}
-
             {activeTab === 'why' && (
               <motion.div
                 key="tab-why"
@@ -495,7 +423,7 @@ export function HowWeWork({ onNavigate }: HowWeWorkProps) {
               >
                 <div className="px-6 md:px-8 py-5 border-b border-[#111418]/10">
                   <h4 className="text-[18px] font-medium text-[#111418]">
-                    04. Why Choose X.MAX?
+                    03. Why Choose X.MAX?
                   </h4>
                 </div>
 
@@ -532,20 +460,26 @@ export function HowWeWork({ onNavigate }: HowWeWorkProps) {
         >
           <div className="max-w-2xl">
             <p className="font-mono text-[12px] tracking-[0.04em] text-[#ff5512] mb-2">
-              IDEAS INTO IMPACT · THINK BEYOND. CREATE BETTER. DELIVER SMARTER.
+              IDEAS INTO IMPACT · STOP THE SCROLL. LOWER CPA. SCALE ROAS.
             </p>
             <p className="text-[16px] md:text-[18px] leading-[1.55] text-white/90">
-              We believe the future of digital marketing belongs to brands that combine imagination
-              with intelligence—bringing creativity, technology and strategy together.
+              Sustainable digital marketing belongs to brands that unify irresistible creative hooks,
+              clean conversion funnels, and data-backed paid acquisition.
             </p>
             <p className="mt-2.5 text-[12px] leading-[1.5] text-white/50">
-              Note: AI tools and methods are selected according to project needs. Specific tools,
-              deliverables, performance outcomes and timelines are confirmed in each approved
-              quotation.
+              Note: Channel mix, creative formats, tracking setup, and campaign milestones are
+              tailored to your funnel goals and confirmed in each approved proposal.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <button
+              type="button"
+              onClick={() => onNavigate('demos')}
+              className="whitespace-nowrap shrink-0 h-[46px] px-5 rounded-[12px] bg-white text-[#111418] hover:bg-white/90 text-[14px] font-medium transition-colors cursor-pointer shadow-sm"
+            >
+              Test Tools →
+            </button>
             <button
               type="button"
               onClick={() => onNavigate('pricing')}

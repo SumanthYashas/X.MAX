@@ -203,41 +203,41 @@ const LAYOUT_PRESETS: Record<
   }
 > = {
   spread: {
-    shortName: 'Brochure Spread',
-    title: 'Brochure / Magazine Spread',
-    spec: '16:10 · A4 Twin Fold',
-    docName: 'Aurum_Spread_A4.psd',
+    shortName: 'Lead Magnet Deck',
+    title: 'Lead Magnet / Email Funnel Banner',
+    spec: '16:10 · Lead Capture',
+    docName: 'Aurum_LeadFunnel_Banner.psd',
     dims: '2480×1550',
     rulerX: ['0', '500', '1000', '1500', '2000', '2480 px'],
     rulerY: ['0', '520', '1040', '1550'],
-    defaultHeading: 'Aurum Rituals.',
-    defaultTag: '01 · Botanical Formulation',
+    defaultHeading: 'Unlock 30% Off.',
+    defaultTag: '01 · Lead-Gen Funnel Offer',
   },
   poster: {
-    shortName: 'Editorial Poster',
-    title: 'Event / Campaign Poster',
-    spec: '3:4 · Print & Digital',
-    docName: 'Stone_Amber_Poster.psd',
+    shortName: 'Retargeting Card',
+    title: 'Paid Social Offer Creative',
+    spec: '3:4 · Paid Social Feed',
+    docName: 'FlashOffer_Retarget_3x4.psd',
     dims: '1080×1440',
     rulerX: ['0', '220', '440', '660', '880', '1080 px'],
     rulerY: ['0', '480', '960', '1440'],
-    defaultHeading: 'Stone & Amber',
-    defaultTag: 'Vol. 04 · Editorial Poster',
+    defaultHeading: '48H Flash Drop',
+    defaultTag: 'Stage 02 · Retargeting Ad',
   },
   packaging: {
-    shortName: 'Packaging Dieline',
-    title: 'Packaging & Label Dieline',
-    spec: '4:3 · Print Ready',
-    docName: 'Serum_30ml_Dieline.psd',
+    shortName: 'Display Ad Set',
+    title: 'Google Display & Catalog Ad',
+    spec: '4:3 · Display & Shopping',
+    docName: 'Serum_Catalog_DisplayAd.psd',
     dims: '1600×1200',
     rulerX: ['0', '320', '640', '960', '1280', '1600 px'],
     rulerY: ['0', '400', '800', '1200'],
-    defaultHeading: 'Botanical Serum Dieline',
-    defaultTag: 'Spec · 30ml',
+    defaultHeading: 'Glow Serum 4.6× ROAS',
+    defaultTag: 'Meta DPA · Dynamic Feed',
   },
 };
 
-const QUICK_LAYOUT_NAMES = ['Aurum Rituals.', 'Stone & Amber', 'Pure Monograph', 'Season Issue 04'];
+const QUICK_LAYOUT_NAMES = ['Unlock 30% Off.', '48H Flash Drop', 'Glow Serum Ad', 'Subscribe & Save'];
 
 const PS_TOOLS: Array<{
   id: PsToolId;
@@ -693,10 +693,10 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
         const leftX = width * 0.65;
         ctx.font = '600 22px monospace';
         ctx.fillStyle = activeAccent.hex;
-        ctx.fillText((layoutTag || 'SPEC · 30ML').toUpperCase(), leftX, 88);
+        ctx.fillText((layoutTag || 'OFFER · FLAT 20%').toUpperCase(), leftX, 88);
         ctx.font = '600 54px "Inter Tight", sans-serif';
         ctx.fillStyle = '#111418';
-        ctx.fillText(layoutHeading || 'Botanical Serum Dieline', leftX, 140, width * 0.3);
+        ctx.fillText(layoutHeading || 'Retargeting Carousel Ad', leftX, 140, width * 0.3);
       }
     }
 
@@ -1297,10 +1297,10 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                         >
                           <span>
                             {mode === 'poster'
-                              ? 'Edit Vertical Title'
+                              ? 'Edit Vertical Ad Headline'
                               : mode === 'layout'
-                                ? 'Edit Layout Heading'
-                                : 'Edit Ad Headline'}
+                                ? 'Edit Funnel Heading'
+                                : 'Edit Ad Copy Headline'}
                           </span>
                           <span className="font-mono text-[10px] text-white/50">T</span>
                         </button>
@@ -1531,11 +1531,27 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
 
   return (
     <section
-      id="creative-studio"
-      aria-label="X.MAX poster design, layout design, and ad campaign studio"
-      className="px-[12px] pt-[12px] pb-[64px] md:px-[40px] md:pt-[20px] md:pb-[96px] lg:px-[calc(68*var(--u))] lg:pb-[calc(110*var(--u))]"
+      id="work"
+      aria-label="03 Our Work - Creative Studio Production"
+      className="px-[12px] pt-[40px] pb-[64px] md:px-[40px] md:pt-[60px] md:pb-[96px] lg:px-[calc(68*var(--u))] lg:pb-[calc(110*var(--u))]"
     >
       <div className="mx-auto w-full max-w-[1360px]">
+        {/* Section Header: 03 OUR WORK */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-8 border-b border-[#111418]/10">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#111418] text-white text-[12px] font-mono tracking-wider uppercase mb-3">
+              <span className="text-[#ff5512] font-bold">03</span>
+              <span>OUR WORK</span>
+            </div>
+            <h2 className="text-[32px] sm:text-[42px] md:text-[50px] font-medium tracking-[-0.025em] leading-[1.04] text-[#111418]">
+              Performance ad creatives, paid social campaigns, and conversion funnels.
+            </h2>
+          </div>
+          <p className="text-[15px] md:text-[16px] text-[#111418]/65 max-w-md leading-relaxed">
+            Live interactive digital marketing studio: edit direct-response ad hooks, social campaign grids, and Meta/Google ad formats in real time.
+          </p>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -1551,13 +1567,13 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-white/10">
             <div
               role="tablist"
-              aria-label="Creative studio discipline preview"
+              aria-label="Digital marketing creative workspace"
               className="w-full md:w-auto max-w-full overflow-x-auto no-scrollbar flex items-center gap-1 p-1 bg-white/[0.06] rounded-[12px]"
             >
               {[
-                { id: 'poster' as const, label: 'Poster Design', Icon: Sparkles },
-                { id: 'layout' as const, label: 'Layout Editing', Icon: Grid3X3 },
-                { id: 'campaign' as const, label: 'Ad Campaign', Icon: Megaphone },
+                { id: 'poster' as const, label: 'Social Ad Creative', Icon: Sparkles },
+                { id: 'layout' as const, label: 'Funnel & Display Grid', Icon: Grid3X3 },
+                { id: 'campaign' as const, label: 'Paid Ad Formats', Icon: Megaphone },
               ].map(({ id, label, Icon }) => {
                 const active = mode === id;
                 return (
@@ -1777,12 +1793,12 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2 text-[13px] font-medium text-white">
                           <Layers className="w-4 h-4 text-[#ff5512]" aria-hidden="true" />
-                          <span>Poster Properties</span>
+                          <span>Ad Creative Properties</span>
                         </div>
                         <button
                           type="button"
                           onClick={resetActiveStudio}
-                          aria-label="Reset poster design settings"
+                          aria-label="Reset ad creative settings"
                           className="inline-flex items-center gap-1 text-[12px] text-white/55 hover:text-white transition-colors cursor-pointer"
                         >
                           <RotateCcw className="w-3 h-3" aria-hidden="true" />
@@ -1822,7 +1838,7 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                             htmlFor="poster-vertical-title"
                             className="block text-[11.5px] font-mono text-white/55 mb-1"
                           >
-                            Poster Display Name (Vertical)
+                            Ad Headline (Vertical)
                           </label>
                           <input
                             ref={titleInputRef}
@@ -2003,13 +2019,13 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                     </div>
 
                     <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[12px] text-white/60">
-                      <span>Poster &amp; Campaign Print</span>
+                      <span>Direct-Response Ad Creatives</span>
                       <button
                         type="button"
                         onClick={() => onNavigate('pricing')}
                         className="text-white hover:text-[#ff5512] font-medium transition-colors cursor-pointer whitespace-nowrap"
                       >
-                        From ₹800 →
+                        From ₹500 →
                       </button>
                     </div>
                   </div>
@@ -2048,16 +2064,15 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                                 </div>
                                 <div>
                                   <h3 className="text-[18px] sm:text-[24px] font-medium tracking-[-0.03em] leading-[1.0] text-[#111418]">
-                                    {layoutHeading || 'Aurum Rituals.'}
+                                    {layoutHeading || 'Unlock 30% Off.'}
                                   </h3>
                                   <p className="mt-1.5 sm:mt-2.5 text-[9.5px] sm:text-[11px] leading-[1.4] text-[#111418]/70 max-w-[24ch]">
-                                    Print &amp; digital editorial layouts structured around crisp
-                                    baseline rhythm and product clarity.
+                                    High-converting lead magnets and email capture assets engineered to maximize paid traffic ROI.
                                   </p>
                                 </div>
                                 <div className="flex items-center justify-between text-[8.5px] sm:text-[9.5px] font-mono text-[#111418]/50 pt-2 border-t border-black/10">
-                                  <span>12-Col Grid</span>
-                                  <span>Spread A4</span>
+                                  <span>CRO Grid</span>
+                                  <span>Lead Funnel</span>
                                 </div>
                               </>
                             ) : (
@@ -2070,7 +2085,7 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                             {layoutLayers.photoLayer && !imgFailed.skincareLayout && (
                               <img
                                 src={skincarePhoto}
-                                alt="Aurum amber skincare serum bottle on travertine plinth editorial spread"
+                                alt="D2C skincare serum campaign creative"
                                 onError={() =>
                                   setImgFailed((p) => ({ ...p, skincareLayout: true }))
                                 }
@@ -2084,8 +2099,8 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                         <div className="relative h-full flex flex-col justify-between p-3.5 sm:p-4">
                           {layoutLayers.copyLayer && (
                             <div className="relative z-10 flex items-center justify-between text-[8.5px] font-mono uppercase tracking-[0.08em] text-[#111418]/80">
-                              <span className="truncate">{layoutTag || 'Vol. 04'}</span>
-                              <span style={{ color: activeAccent.hex }}>Editorial</span>
+                              <span className="truncate">{layoutTag || 'Stage 02'}</span>
+                              <span style={{ color: activeAccent.hex }}>Retargeting</span>
                             </div>
                           )}
                           <div
@@ -2094,7 +2109,7 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                             {layoutLayers.photoLayer && !imgFailed.skincareLayout && (
                               <img
                                 src={skincarePhoto}
-                                alt="Luxury packaging poster layout showcase"
+                                alt="Paid social retargeting offer creative"
                                 onError={() =>
                                   setImgFailed((p) => ({ ...p, skincareLayout: true }))
                                 }
@@ -2106,13 +2121,13 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                           {layoutLayers.copyLayer && (
                             <div className="relative z-10 flex items-end justify-between gap-2">
                               <h3 className="text-[16px] sm:text-[20px] font-medium tracking-[-0.025em] leading-none truncate">
-                                {layoutHeading || 'Stone & Amber'}
+                                {layoutHeading || '48H Flash Drop'}
                               </h3>
                               <span
                                 className="font-mono text-[8.5px] shrink-0"
                                 style={{ color: activeAccent.hex }}
                               >
-                                300 DPI
+                                1080×1440
                               </span>
                             </div>
                           )}
@@ -2125,7 +2140,7 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                             {layoutLayers.photoLayer && !imgFailed.skincareLayout && (
                               <img
                                 src={skincarePhoto}
-                                alt="Product spec sheet packaging layout"
+                                alt="D2C dynamic product display ad creative"
                                 onError={() =>
                                   setImgFailed((p) => ({ ...p, skincareLayout: true }))
                                 }
@@ -2142,24 +2157,24 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                                     className="font-mono text-[8.5px] uppercase block truncate"
                                     style={{ color: activeAccent.hex }}
                                   >
-                                    {layoutTag || 'Spec · 30ml'}
+                                    {layoutTag || 'Meta DPA · Dynamic'}
                                   </span>
                                   <h3 className="mt-1 text-[14px] sm:text-[18px] font-medium tracking-[-0.02em] leading-[1.08]">
-                                    {layoutHeading || 'Botanical Serum Dieline'}
+                                    {layoutHeading || 'Glow Serum 4.6× ROAS'}
                                   </h3>
                                 </div>
                                 <div className="space-y-1 text-[8.5px] sm:text-[10px] font-mono text-[#111418]/70 border-t border-black/10 pt-2">
                                   <div className="flex justify-between">
-                                    <span>Bleed</span>
-                                    <span>3.0 mm</span>
+                                    <span>Channel</span>
+                                    <span>Display + Shopping</span>
                                   </div>
                                   <div className="flex justify-between">
-                                    <span>Foil</span>
-                                    <span>Spot Matte</span>
+                                    <span>CTR Est.</span>
+                                    <span>3.4% Avg</span>
                                   </div>
                                   <div className="flex justify-between">
-                                    <span>Ink</span>
-                                    <span>CMYK Coated</span>
+                                    <span>Tracking</span>
+                                    <span>Meta CAPI</span>
                                   </div>
                                 </div>
                               </>
@@ -2218,7 +2233,7 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
 
                       <div>
                         <p className="text-[11.5px] font-mono text-white/50 mb-2">
-                          Print &amp; Editorial Format
+                          Digital Campaign Ad Format
                         </p>
                         <div className="space-y-1.5">
                           {(Object.keys(LAYOUT_PRESETS) as LayoutPreset[]).map((optKey) => {
@@ -2255,7 +2270,7 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                             htmlFor="layout-heading-input"
                             className="block text-[11.5px] font-mono text-white/55 mb-1"
                           >
-                            Layout Heading
+                            Offer / Ad Headline
                           </label>
                           <input
                             ref={layoutHeadingInputRef}
@@ -2263,7 +2278,7 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                             type="text"
                             value={layoutHeading}
                             onChange={(e) => setLayoutHeading(e.target.value.slice(0, 28))}
-                            placeholder="Aurum Rituals."
+                            placeholder="Unlock 30% Off."
                             className="w-full h-[36px] px-3 rounded-[9px] bg-[#0e1015] border border-white/12 text-[13px] font-medium text-white focus:outline-none focus:border-[#ff5512] transition-colors"
                           />
                         </div>
@@ -2272,14 +2287,14 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                             htmlFor="layout-tag-input"
                             className="block text-[11px] font-mono text-white/50 mb-1"
                           >
-                            Section Label
+                            Funnel Stage Label
                           </label>
                           <input
                             id="layout-tag-input"
                             type="text"
                             value={layoutTag}
                             onChange={(e) => setLayoutTag(e.target.value.slice(0, 28))}
-                            placeholder="01 · Botanical Formulation"
+                            placeholder="01 · Lead-Gen Funnel Offer"
                             className="w-full h-[34px] px-2.5 rounded-[8px] bg-[#0e1015] border border-white/12 text-[12px] text-white focus:outline-none focus:border-[#ff5512] transition-colors"
                           />
                         </div>
@@ -2333,7 +2348,7 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                               }`}
                               aria-hidden="true"
                             />
-                            12-Column Margin Grid
+                            Ad Safe-Zone &amp; Grid
                           </span>
                           <span className="font-mono text-[10.5px] text-white/45">
                             {showGuides ? 'Visible' : 'Hidden'}
@@ -2358,7 +2373,7 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                               }`}
                               aria-hidden="true"
                             />
-                            Editorial Copy Layer
+                            Ad Copy &amp; Offer Layer
                           </span>
                           <span className="font-mono text-[10.5px] text-white/45">
                             {layoutLayers.copyLayer ? 'Visible' : 'Hidden'}
@@ -2368,13 +2383,13 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
                     </div>
 
                     <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[12px] text-white/60">
-                      <span>Brochures, Decks &amp; Packaging</span>
+                      <span>Lead Magnets, Retargeting &amp; DPA</span>
                       <button
                         type="button"
                         onClick={() => onNavigate('pricing')}
                         className="text-white hover:text-[#ff5512] font-medium transition-colors cursor-pointer whitespace-nowrap"
                       >
-                        View Design Rates →
+                        View Ad Rates →
                       </button>
                     </div>
                   </div>
@@ -2706,10 +2721,10 @@ export function StudioProductionShowcase({ onNavigate }: StudioProductionShowcas
         <div className="mt-10 md:mt-14 flex flex-col md:flex-row md:items-end justify-between gap-6 px-2">
           <div className="max-w-2xl">
             <p className="text-[13px] font-medium tracking-[0.04em] text-[#111418]/50 mb-2">
-              Studio Production · Posters, Layouts &amp; Ad Campaigns
+              Campaign Production · Social Ads, Funnels &amp; Paid Media
             </p>
             <h2 className="text-[26px] sm:text-[32px] md:text-[38px] font-medium tracking-[-0.025em] leading-[1.1] text-[#111418] [text-wrap:balance]">
-              Craft bold posters, align every layout, and launch ad campaigns built to convert.
+              Craft scroll-stopping ad creatives, conversion layouts, and paid campaigns built to convert.
             </h2>
           </div>
 

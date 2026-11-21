@@ -1087,20 +1087,22 @@ export function HeroKeychain({ entranceStarted, onReady3D, onExploreClick }: Her
         <div className="flex flex-col items-start md:pb-[4px] lg:pb-[calc(10*var(--u))]">
           <p
             ref={subtitleRef}
-            className="text-[#111418] text-[15.5px] leading-[1.25] tracking-[0.01em] sm:text-[17px] md:text-[18px] md:leading-[1.2] lg:text-[calc(23.5*var(--u))] lg:leading-[1.15]"
+            className="text-[#111418] text-[15.5px] leading-[1.3] tracking-[0.01em] sm:text-[17px] md:text-[18px] md:leading-[1.25] lg:text-[calc(22*var(--u))] lg:leading-[1.2] max-w-[28ch]"
           >
-            Digital marketing, creative,
-            <br />
-            branding &amp; web — priced clearly.
+            We turn ad spend, creative hooks, and conversion funnels into measurable digital growth.
           </p>
           <button
             ref={ctaRef}
             type="button"
             onClick={onExploreClick}
-            className="pointer-events-auto hero-cta-btn mt-[18px] h-[44px] px-[22px] rounded-[12px] text-[15px] md:mt-[20px] md:h-[44px] md:px-[24px] md:text-[15px] lg:mt-[calc(28*var(--u))] lg:h-[calc(48*var(--u))] lg:px-[calc(29*var(--u))] lg:rounded-[calc(13*var(--u))] lg:text-[calc(16*var(--u))] bg-[#16191f] text-white tracking-[0.02em] font-medium cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111418]"
+            className="pointer-events-auto hero-cta-btn mt-[16px] h-[44px] px-[22px] rounded-full text-[14.5px] md:mt-[18px] md:h-[46px] md:px-[24px] md:text-[15px] lg:mt-[calc(24*var(--u))] lg:h-[calc(48*var(--u))] lg:px-[calc(26*var(--u))] bg-[#16191f] text-[#34d399] hover:text-[#6ee7b7] border border-emerald-500/30 tracking-[0.02em] font-medium cursor-pointer transition-all duration-200 hover:bg-[#222730] flex items-center gap-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111418]"
           >
-            Explore Services
+            <span>Let&apos;s Work Together</span>
+            <span className="text-[#34d399]">→</span>
           </button>
+          <p className="mt-[14px] font-mono text-[11px] md:text-[12px] tracking-[0.1em] text-[#111418]/55 uppercase font-medium">
+            META ADS · GOOGLE ADS · SEO · CONVERSION FUNNELS
+          </p>
         </div>
       </div>
     </section>

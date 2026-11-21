@@ -25,13 +25,13 @@ export function TermsAndCharges({
     >
       <div className="max-w-2xl pb-10 mb-10 border-b border-[#111418]/10">
         <p className="text-[13px] font-medium tracking-[0.04em] text-[#111418]/50 mb-3">
-          Service Pricing Catalogue · 2026–27
+          Digital Marketing Pricing · 2026–27
         </p>
         <h1 className="text-[32px] md:text-[48px] font-medium tracking-[-0.025em] leading-[1.06] text-[#111418] [text-wrap:balance]">
-          Additional Charges &amp; Commercial Terms
+          Campaign Add-Ons &amp; Commercial Terms
         </h1>
         <p className="mt-3 text-[16px] md:text-[18px] leading-[1.55] text-[#111418]/70">
-          Transparent policies, milestone schedules, and optional add-on charges for your project.
+          Transparent billing policies, campaign kickoff milestones, and optional marketing add-ons.
         </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14">
@@ -167,7 +167,7 @@ export function TermsAndCharges({
       {/* Cross-Page Footer Bar */}
       <div className="mt-14 pt-8 border-t border-[#111418]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <p className="text-[15px] text-[#111418]/65">
-          Ready to finalize your project scope and generate a quotation?
+          Ready to finalize your campaign scope and generate a marketing quotation?
         </p>
         <div className="flex flex-wrap items-center gap-3">
           <button

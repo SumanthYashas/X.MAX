@@ -84,11 +84,11 @@ export function Footer({ onNavigate }: FooterProps) {
               />
             </a>
             <p className="mt-4 text-[12px] font-mono tracking-[0.06em] text-white/55">
-              DIGITAL MARKETING • CREATIVE • BRANDING • WEB
+              META ADS • GOOGLE ADS • REELS CREATIVES • SEO &amp; CONVERSION FUNNELS
             </p>
             <p className="mt-3 text-[15px] leading-[1.6] text-white/75 max-w-md">
-              Thoughtful creative work, purposeful strategy, and structured project delivery—combining
-              industry-standard Adobe tools with human-led AI workflows.
+              Performance-driven digital marketing, thumb-stopping ad creatives, high-retention
+              Reels, and conversion funnels engineered for measurable ROI.
             </p>
           </div>
 
@@ -105,6 +105,15 @@ export function Footer({ onNavigate }: FooterProps) {
                   className="hover:text-[#ff5512] transition-colors"
                 >
                   Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href={ROUTE_PATHS.demos}
+                  onClick={(e) => handleLink(e, 'demos')}
+                  className="hover:text-[#ff5512] transition-colors font-medium text-white"
+                >
+                  Test Tools (Apps UI)
                 </a>
               </li>
               <li>
@@ -152,6 +161,15 @@ export function Footer({ onNavigate }: FooterProps) {
                   Custom Quote
                 </a>
               </li>
+              <li>
+                <a
+                  href={ROUTE_PATHS.analytics}
+                  onClick={(e) => handleLink(e, 'analytics')}
+                  className="hover:text-[#ff5512] transition-colors"
+                >
+                  Analytics &amp; SEO Hub
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -175,6 +193,25 @@ export function Footer({ onNavigate }: FooterProps) {
               <div>
                 <p className="text-[12px] text-white/50">Engagement Model</p>
                 <p className="mt-0.5 text-white/80">One-time projects &amp; modular scopes</p>
+              </div>
+              <div className="pt-1 flex items-center gap-3 text-[12px] font-mono text-white/55">
+                <a
+                  href="/sitemap.xml"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#ff5512] transition-colors"
+                >
+                  sitemap.xml
+                </a>
+                <span aria-hidden="true">·</span>
+                <a
+                  href="/robots.txt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#ff5512] transition-colors"
+                >
+                  robots.txt
+                </a>
               </div>
             </div>
           </div>

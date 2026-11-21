@@ -27,14 +27,14 @@ export function BundledPackages({
         className="max-w-2xl pb-10"
       >
         <p className="text-[13px] font-medium tracking-[0.04em] text-[#111418]/50 mb-3">
-          One-Time Project Scopes
+          Turnkey Growth &amp; Campaign Scopes
         </p>
         <h2 className="text-[32px] md:text-[48px] font-medium tracking-[-0.025em] leading-[1.06] text-[#111418] [text-wrap:balance]">
-          02. Optional Bundled Project Packages
+          02. Optional Digital Marketing Bundles
         </h2>
         <p className="mt-3 text-[16px] md:text-[18px] leading-[1.55] text-[#111418]/70">
-          Bundles are optional, one-time project scopes for clients who want several services
-          together. Individual service ordering remains available.
+          Bundles are optional turnkey campaign scopes for brands scaling across Meta Ads, Google
+          Search, reels creatives, and conversion funnels. Individual deliverables remain available.
         </p>
       </motion.div>
 
@@ -145,7 +145,7 @@ export function BundledPackages({
       {/* Cross-Page Footer Bar */}
       <div className="mt-14 pt-8 border-t border-[#111418]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <p className="text-[15px] text-[#111418]/65">
-          Prefer to pick individual deliverables? Build a custom list from our rate card.
+          Prefer to pick individual deliverables? Build a custom campaign list from our rate card.
         </p>
         <div className="flex flex-wrap items-center gap-3">
           <button

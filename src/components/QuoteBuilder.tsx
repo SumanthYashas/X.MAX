@@ -7,6 +7,7 @@ import {
   BUNDLED_PACKAGES,
   formatINR,
 } from '../data/xmaxCatalogue';
+import { trackLeadConversion } from '../lib/analytics';
 import { PageRoute } from '../types/routing';
 
 interface QuoteBuilderProps {
@@ -83,7 +84,7 @@ export function QuoteBuilder({
 
   const buildPlainTextSummary = (refCode?: string) => {
     const lines: string[] = [
-      refCode ? `X.MAX — QUOTATION REQUEST (#${refCode})` : 'X.MAX — PROJECT SCOPE & QUOTATION REQUEST',
+      refCode ? `X.MAX DIGITAL MARKETING — QUOTATION REQUEST (#${refCode})` : 'X.MAX DIGITAL MARKETING — CAMPAIGN SCOPE & QUOTATION REQUEST',
       '',
     ];
     if (name.trim()) lines.push(`Name: ${name.trim()}`);
@@ -160,6 +161,7 @@ export function QuoteBuilder({
     const waLink = `https://wa.me/917829035362?text=${encodeURIComponent(message)}`;
     setWhatsappUrl(waLink);
     setSubmittedRef(code);
+    trackLeadConversion(`Quote #${code}`, '/quote', estimatedTotal);
 
     const anchor = document.createElement('a');
     anchor.href = waLink;
@@ -189,14 +191,14 @@ export function QuoteBuilder({
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/10">
           <div className="max-w-xl">
             <p className="text-[13px] font-medium tracking-[0.04em] text-[#ff5512] mb-2.5">
-              Your Requirements. Our Pricing.
+              Your Growth Targets. Transparent Pricing.
             </p>
             <h2 className="text-[30px] md:text-[44px] font-medium tracking-[-0.025em] leading-[1.06] [text-wrap:balance]">
-              Build Your Custom Quotation
+              Build Your Campaign Quotation
             </h2>
             <p className="mt-3 text-[15px] md:text-[16px] leading-[1.55] text-white/70">
-              Combine individual services, select a bundled project scope, and request a formal
-              quotation valid for 15 days.
+              Combine individual digital marketing deliverables, select a growth bundle, and
+              request a formal campaign quotation valid for 15 days.
             </p>
           </div>
 
@@ -555,14 +557,14 @@ export function QuoteBuilder({
 
                   <div>
                     <label htmlFor="q-notes" className="block text-[13px] text-white/75 mb-1.5">
-                      Project Requirements &amp; Target Timeline
+                      Campaign Goals, Monthly Ad Budget &amp; Target Launch
                     </label>
                     <textarea
                       id="q-notes"
                       rows={4}
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
-                      placeholder="Share your goals, deliverables, or target launch date..."
+                      placeholder="Share your target channels (Meta/Google/SEO), monthly ad spend, and launch timeline..."
                       className="w-full p-4 rounded-[12px] bg-white/[0.07] border border-white/12 text-[15px] text-white placeholder:text-white/35 focus:outline-none focus:border-[#ff5512] resize-none transition-colors"
                     />
                   </div>
